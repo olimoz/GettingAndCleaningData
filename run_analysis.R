@@ -1,10 +1,11 @@
 ##Set your own working directory before proceeding
 #setwd("~/0_OM/Training/R/R_GettingData/Project")
 
-#Download the data and unzip
-url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(url, destfile="./HAR_Data.zip")
-unzip("./HAR_Data.zip")
+##Download the data and unzip
+##This code assumes you have already done this step, as per the assignment instructions
+#url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+#download.file(url, destfile="./HAR_Data.zip")
+#unzip("./HAR_Data.zip")
 
 #Import the feature names, applicable to both testing and training sets.
 featurenames          <- read.csv("./UCI HAR Dataset/features.txt",header=F, sep=" ")
