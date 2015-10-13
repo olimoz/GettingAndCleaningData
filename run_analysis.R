@@ -1,5 +1,5 @@
 ##Set your own working directory before proceeding
-#setwd("~/0_OM/Training/R/R_GettingData/Project")
+setwd("~/0_OM/Training/R/R_GettingData/Project")
 
 ##Download the data and unzip
 ##This code assumes you have already done this step, as per the assignment instructions
@@ -70,8 +70,11 @@ MeansAndStdDevsOnly<-AllData[,c(1,2,3,4,ColIndicesOfMeans,ColIndicesOfStdDevs)]
 ##with the average of each variable for each activity and each subject.
 library(dplyr)
 MeansByActivityAndSubject<-MeansAndStdDevsOnly[,-c(1,2)] %>% 
-                             group_by(y_name,subject) %>% 
+                             group_by(activity,subject) %>% 
                                 summarise_each(funs(mean))
 
 ##Output the result
 #View(MeansByActivityAndSubject)
+
+##Or save to file
+#write.table(MeansByActivityAndSubject, file="output.txt", row.name=FALSE)
